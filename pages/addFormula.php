@@ -12,7 +12,7 @@ if($_POST['fname'] && $_POST['concentration'] && $_POST['quantity']){
 if(mysqli_num_rows(mysqli_query($conn, "SELECT name FROM formulas WHERE name = '$fname'"))){
 		$msg='<div class="alert alert-danger alert-dismissible">
 		<a href="#" class="close" data-dismiss="alert" aria-label="close">x</a>
-  		<strong>Error: </strong>'.$fname.' already exists! Click <a href="/?do=Formula&name='.$fname.'">here</a> to view/edit!
+  		<strong>Error: </strong>'.$fname.' already exists! Click <a href="?do=Formula&name='.$fname.'">here</a> to view/edit!
 		</div>';
 	}elseif(checkDupes($_POST['ingredient'])){
 			$msg='<div class="alert alert-danger alert-dismissible">
@@ -32,7 +32,7 @@ if(mysqli_num_rows(mysqli_query($conn, "SELECT name FROM formulas WHERE name = '
 			 
 		}
 		if($fq){
-			header("Location: /?do=Formula&name=$fname");
+			header("Location: ?do=Formula&name=$fname");
 		}else{
 			echo '<div class="alert alert-danger alert-dismissible">
 				<a href="#" class="close" data-dismiss="alert" aria-label="close">x</a>

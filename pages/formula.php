@@ -50,7 +50,6 @@ if($_GET['action'] == 'addIng' && $_POST['concentration'] && $_POST['quantity'] 
 	$quantity = mysqli_real_escape_string($conn, $_POST['quantity']);
 	$concentration = mysqli_real_escape_string($conn, $_POST['concentration']);
 	$ingredient = mysqli_real_escape_string($conn, $_POST['ingredient']);
-	//$ingredient_id = mysqli_real_escape_string($conn, $_POST['ingredient']);
 	
 	if(mysqli_num_rows(mysqli_query($conn, "SELECT ingredient FROM formulas WHERE ingredient = '$ingredient' AND name = '$fname'"))){
 		$msg='<div class="alert alert-danger alert-dismissible">
@@ -94,7 +93,7 @@ $mg = mysqli_fetch_assoc(mysqli_query($conn, "SELECT SUM(quantity) AS total_mg F
               <div>
                   <tr>
                     <th colspan="6">
-                      <form action="/?do=Formula&name=<?php echo $f_name; ?>&action=addIng" method="post" enctype="multipart/form-data" name="form1" id="form1">
+                      <form action="?do=Formula&name=<?php echo $f_name; ?>&action=addIng" method="post" enctype="multipart/form-data" name="form1" id="form1">
                          <table width="100%" border="0" class="table table-bordered">
                                     <tr>  
                                          <td>
@@ -124,8 +123,8 @@ $mg = mysqli_fetch_assoc(mysqli_query($conn, "SELECT SUM(quantity) AS total_mg F
                       <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bars"></i></button>
                       <div class="dropdown-menu">
                         <a class="dropdown-item" id="csv" href="#">Export to CSV</a>
-                        <a class="dropdown-item" href="/?do=Formula&action=printLabel&name=<?php echo $f_name; ?>" onclick="return confirm('Print label?');">Print Label</a>
-                        <a class="dropdown-item popup-link" href="/pages/viewPyramid.php?formula=<?php echo $f_name; ?>">View Pyramid</a>
+                        <a class="dropdown-item" href="?do=Formula&action=printLabel&name=<?php echo $f_name; ?>" onclick="return confirm('Print label?');">Print Label</a>
+                        <a class="dropdown-item popup-link" href="pages/viewPyramid.php?formula=<?php echo $f_name; ?>">View Pyramid</a>
                       </div>
                     </div>
                     </tr>
@@ -142,7 +141,7 @@ $mg = mysqli_fetch_assoc(mysqli_query($conn, "SELECT SUM(quantity) AS total_mg F
                   <?php while ($formula = mysqli_fetch_array($formula_q)) {
 					  echo'
                     <tr>
-                      <td align="center"><a href="/?do=editIngredient&id='.$formula['ingredient'].'">'.$formula['ingredient'].'</a> '.checkIng($formula['ingredient'],$dbhost, $dbuser, $dbpass, $dbname).'</td>
+                      <td align="center"><a href="?do=editIngredient&id='.$formula['ingredient'].'">'.$formula['ingredient'].'</a> '.checkIng($formula['ingredient'],$dbhost, $dbuser, $dbpass, $dbname).'</td>
                       <td data-name="concentration" class="concentration" data-type="text" align="center" data-pk="'.$formula['ingredient'].'">'.$formula['concentration'].'</td>';
 					  $ing_q = mysqli_fetch_array(mysqli_query($conn, "SELECT IFRA,price,ml,profile FROM ingredients WHERE name = '$formula[ingredient]'"));
 					  $conc_p = number_format($formula['quantity']/$mg['total_mg'] * 100, 2);
@@ -158,7 +157,7 @@ $mg = mysqli_fetch_assoc(mysqli_query($conn, "SELECT SUM(quantity) AS total_mg F
 					  echo'<td data-name="quantity" class="quantity" data-type="text" align="center" data-pk="'.$formula['ingredient'].'">'.$formula['quantity'].'</td>';
 					  echo'<td align="center" '.$IFRA_WARN.'>'.$conc_p.'%</td>';
 					  echo '<td align="center">'.utf8_encode($settings['currency']).calcCosts($ing_q['price'],$formula['quantity'], $ing_q['ml']).'</td>';
-					  echo '<td class="noexport" align="center"><a href="/?do=Formula&action=deleteIng&name='.$formula['name'].'&id='.$formula['id'].'&ing='.$formula['ingredient'].'" onclick="return confirm(\'Remove '.$formula['ingredient'].' from formula?\');" class="fas fa-trash" rel="tipsy" title="Remove '.$formula['ingredient'].'"></a></td>
+					  echo '<td class="noexport" align="center"><a href="?do=Formula&action=deleteIng&name='.$formula['name'].'&id='.$formula['id'].'&ing='.$formula['ingredient'].'" onclick="return confirm(\'Remove '.$formula['ingredient'].' from formula?\');" class="fas fa-trash" rel="tipsy" title="Remove '.$formula['ingredient'].'"></a></td>
                     </tr>';
 					$tot[] = calcCosts($ing_q['price'],$formula['quantity'], $ing_q['ml']);
 				  }
@@ -194,7 +193,7 @@ $(document).ready(function(){
   $('#formula_data').editable({
   container: 'body',
   selector: 'td.quantity',
-  url: "/pages/update_data.php?formula=<?php echo $f_name; ?>",
+  url: "pages/update_data.php?formula=<?php echo $f_name; ?>",
   title: 'mg',
   type: "POST",
   dataType: 'json',
@@ -214,7 +213,7 @@ $(document).ready(function(){
   $('#formula_data').editable({
   container: 'body',
   selector: 'td.concentration',
-  url: "/pages/update_data.php?formula=<?php echo $f_name; ?>",
+  url: "pages/update_data.php?formula=<?php echo $f_name; ?>",
   title: 'Concentration %',
   type: "POST",
   dataType: 'json',

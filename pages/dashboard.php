@@ -1,8 +1,8 @@
 <div id="content-wrapper" class="d-flex flex-column">
 <?php require_once('pages/top.php'); ?>
 
-<link rel="stylesheet" href="../css/jquery-ui.css">
-<script src="../js/jquery-ui.js"></script>
+<link rel="stylesheet" href="css/jquery-ui.css">
+<script src="js/jquery-ui.js"></script>
 <script>
 $(function() {
   $("#formulasprofile").tabs();
@@ -91,9 +91,9 @@ $(function() {
               <div>
               <?php
               	if(mysqli_num_rows(mysqli_query($conn, "SELECT id FROM ingredients"))== 0){
-					echo '<div class="alert alert-info alert-dismissible"><strong>INFO: </strong> no ingredients yet, click <a href="/?do=ingredients">here</a> to add.</div>';
+					echo '<div class="alert alert-info alert-dismissible"><strong>INFO: </strong> no ingredients yet, click <a href="?do=ingredients">here</a> to add.</div>';
 				}elseif(mysqli_num_rows(mysqli_query($conn, "SELECT id FROM formulas"))== 0){
-					echo '<div class="alert alert-info alert-dismissible"><strong>INFO: </strong> no formulas yet, click <a href="/?do=addFormula">here</a> to add.</div>';
+					echo '<div class="alert alert-info alert-dismissible"><strong>INFO: </strong> no formulas yet, click <a href="?do=addFormula">here</a> to add.</div>';
 
 				}else{
                 ?>
@@ -117,5 +117,5 @@ $(function() {
           </div>
         </div>
       </div>
-	<?php // require_once("./pages/footer.php"); ?>
+  </div>
   </div>

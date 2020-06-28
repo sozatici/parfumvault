@@ -3,7 +3,7 @@ require_once('../inc/config.php');
 ?>
 <table width="100%" border="0">
   <tr>
-    <td><strong><?php echo $product; ?></strong></td>
+    <td><strong>JBs Perfumers Vault Light</strong></td>
     <td>&nbsp;</td>
   </tr>
   <tr>
@@ -33,8 +33,9 @@ THE SOFTWARE.</p></pre>
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td><p>Version: <strong><?php echo file_get_contents('../VERSION.md');?></strong></p>
+    <td><p>Version: <strong><?php echo file_get_contents('../VERSION.md');?> Light</strong></p>
     <p><a href="https://github.com/globaldyne/parfumvault" target="_blank"><strong>Github Repo</strong></a></p>
+    <p><a href="https://www.jbparfum.com" target="_blank"><strong>For the Pro Version click here</strong></a></p>
     <p>Theme by <a href="https://startbootstrap.com/themes/sb-admin-2/" target="_blank"><strong>SB Admin 2</strong></a></p></td>
     
     <td>&nbsp;</td>

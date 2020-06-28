@@ -85,7 +85,7 @@ $res_ingProfiles = mysqli_query($conn, "SELECT id,name FROM ingProfiles");
 <table width="100%" border="0">
         <tr>
           <td><div class="form-group">  
-<form action="/?do=addIngredient" method="post" enctype="multipart/form-data" name="add_ing" target="_self" id="add_ing">  
+<form action="?do=addIngredient" method="post" enctype="multipart/form-data" name="add_ing" target="_self" id="add_ing">  
                           <div class="table-responsive">
                             <table width="100%" border="0">
                               <tr>

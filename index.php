@@ -119,37 +119,37 @@ $(document).ready(function() {
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3"><?php echo $product; ?> <sup><?php //echo $ver; ?></sup></div>
+        <div class="sidebar-brand-text mx-3"><?php echo $product; ?></div>
       </a>
 <?php } ?>
       <!-- Divider -->
       <hr class="sidebar-divider my-0">
       <li class="nav-item">
-        <a class="nav-link" href="/?do=dashboard">
+        <a class="nav-link" href="?do=dashboard">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
       
         <li class="nav-item">
-        <a class="nav-link" href="/?do=addFormula">
+        <a class="nav-link" href="?do=addFormula">
           <i class="fas fa-fw fa-flask"></i>
           <span>Add Formula</span></a>
       </li>
 
         <li class="nav-item">
-        <a class="nav-link" href="/?do=ingredients">
+        <a class="nav-link" href="?do=ingredients">
           <i class="fas fa-fw fa-vial"></i>
           <span>Ingredients</span></a>
       </li>
       
         <li class="nav-item">
-        <a class="nav-link" href="/?do=insights">
+        <a class="nav-link" href="?do=insights">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Insights</span></a>
       </li>
       
         <li class="nav-item">
-        <a class="nav-link" href="/?do=settings">
+        <a class="nav-link" href="?do=settings">
           <i class="fas fa-fw fa-cog"></i>
           <span>Settings</span></a>
       </li>
@@ -178,7 +178,6 @@ $(document).ready(function() {
 			require 'pages/dashboard.php';
 		}
 	?>
-		<?php require_once("./pages/footer.php"); ?>
-
+	<?php require_once("./pages/footer.php"); ?>
 </body>
 </html>

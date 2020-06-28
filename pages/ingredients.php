@@ -25,7 +25,7 @@ $ingredient_q = mysqli_query($conn, "SELECT * FROM ingredients ORDER BY name ASC
           <div>
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h2 class="m-0 font-weight-bold text-primary"><a href="/?do=ingredients">Ingredients</a></h2>
+              <h2 class="m-0 font-weight-bold text-primary"><a href="?do=ingredients">Ingredients</a></h2>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -45,7 +45,7 @@ $ingredient_q = mysqli_query($conn, "SELECT * FROM ingredients ORDER BY name ASC
                       <div class="btn-group">
                       <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bars"></i></button>
                       <div class="dropdown-menu dropdown-menu-right">
-                        <a class="dropdown-item" href="/?do=addIngredient">Add new ingredient</a>
+                        <a class="dropdown-item" href="?do=addIngredient">Add new ingredient</a>
                         <a class="dropdown-item" id="csv" href="#">Export to CSV</a>
                       </div>
                     </div>
@@ -101,7 +101,7 @@ $ingredient_q = mysqli_query($conn, "SELECT * FROM ingredients ORDER BY name ASC
 					  }else{
 						  echo '<td align="center" class="noexport"><a href="http://www.thegoodscentscompany.com/search3.php?qName='.$ingredient['name'].'" target="_blanc" class="fa fa-external-link-alt"></a></td>';
 					  }
-                      echo '<td class="noexport" align="center"><a href="/?do=editIngredient&id='.$ingredient['name'].'" class="fas fa-edit"><a> <a href="/?do=ingredients&action=delete&id='.$ingredient['id'].'&name='.$ingredient['name'].'" onclick="return confirm(\'Delete '.$ingredient['name'].'?\');" class="fas fa-trash"></a></td>';
+                      echo '<td class="noexport" align="center"><a href="?do=editIngredient&id='.$ingredient['name'].'" class="fas fa-edit"><a> <a href="?do=ingredients&action=delete&id='.$ingredient['id'].'&name='.$ingredient['name'].'" onclick="return confirm(\'Delete '.$ingredient['name'].'?\');" class="fas fa-trash"></a></td>';
 					  echo '</tr>';
 				  }
                     ?>

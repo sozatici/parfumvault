@@ -7,9 +7,9 @@
   font-size	: 11px;
 }						
 </style>
-<script src="../js/amcharts_3.21.15.free/amcharts/amcharts.js"></script>
-<script src="../js/amcharts_3.21.15.free/amcharts/serial.js"></script>
-<script src="../js/amcharts_3.21.15.free/amcharts/themes/light.js"></script>
+<script src="./js/amcharts_3.21.15.free/amcharts/amcharts.js"></script>
+<script src="./js/amcharts_3.21.15.free/amcharts/serial.js"></script>
+<script src="./js/amcharts_3.21.15.free/amcharts/themes/light.js"></script>
 
 <script>
 var chart = AmCharts.makeChart( "chartdiv", {
@@ -78,6 +78,4 @@ if(mysqli_num_rows(mysqli_query($conn, "SELECT id FROM formulas"))== 0){
 </div>
 </div>
 </div>
-
-
 </div>

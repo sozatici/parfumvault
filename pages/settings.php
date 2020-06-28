@@ -181,8 +181,8 @@ $prof_q = mysqli_query($conn, "SELECT * FROM ingProfiles ORDER BY name ASC");
 require('./inc/settings.php');
 
 ?>
-<link rel="stylesheet" href="../css/jquery-ui.css">
-<script src="../js/jquery-ui.js"></script>
+<link rel="stylesheet" href="css/jquery-ui.css">
+<script src="js/jquery-ui.js"></script>
 <script>
 $(function() {
   $("#settings").tabs();
@@ -201,7 +201,7 @@ $(function() {
         <li><a href="pages/about.php"><span>About</span></a></li>
      </ul>
      <div id="general">
-     <form id="form" name="form" method="post" enctype="multipart/form-data" action="/?do=settings&update=general#general">
+     <form id="form" name="form" method="post" enctype="multipart/form-data" action="?do=settings&update=general#general">
      <table width="100%" border="0">
         <tr>
           <td colspan="4"><?php echo $msg; ?></td>
@@ -232,7 +232,7 @@ $(function() {
      </form>
 	 </div>
      <div id="suppliers">
-       <form id="form" name="form" method="post" action="/?do=settings&update=suppliers#suppliers">
+       <form id="form" name="form" method="post" action="?do=settings&update=suppliers#suppliers">
       <table width="100%" border="0"  class="table table-striped table-sm">
               <tr>
                 <td colspan="7"><?php echo $msg; ?></td>
@@ -266,7 +266,7 @@ $(function() {
                     <tr>
                       <td data-name="sname" class="sname" data-type="text" align="center" data-pk="'.$sup['id'].'"><a href="#">'.$sup['name'].'</a></td>
 					  <td data-name="snotes" class="snotes" data-type="text" align="center" data-pk="'.$sup['id'].'"><a href="#">'.$sup['notes'].'</a></td>
-                      <td align="center"><a href="/?do=settings&action=delete&sup_id='.$sup['id'].'#suppliers" onclick="return confirm(\'Delete supplier '.$sup['name'].'?\');" class="fas fa-trash"></a></td>
+                      <td align="center"><a href="?do=settings&action=delete&sup_id='.$sup['id'].'#suppliers" onclick="return confirm(\'Delete supplier '.$sup['name'].'?\');" class="fas fa-trash"></a></td>
 					</tr>';
 				  		}
                     ?>
@@ -281,7 +281,7 @@ $(function() {
           </form>
      </div>
      <div id="categories">
-       <form id="form" name="form" method="post" action="/?do=settings&update=categories#categories">
+       <form id="form" name="form" method="post" action="?do=settings&update=categories#categories">
             <table width="100%" border="0" class="table table-striped table-sm">
               <tr>
                 <td colspan="8"><?php echo $msg; ?></td>
@@ -316,7 +316,7 @@ $(function() {
                     <tr>
                       <td data-name="cname" class="cname" data-type="text" align="center" data-pk="'.$cat['id'].'"><a href="#">'.$cat['name'].'</a></td>
 					  <td width="60%" data-name="cnotes" class="cnotes" data-type="text" align="left" data-pk="'.$cat['id'].'"align="left"><a href="#">'.wordwrap($cat['notes'], 150, "<br />\n").'</a></td>
-                      <td align="center"><a href="/?do=settings&action=delete&cat_id='.$cat['id'].'#categories" onclick="return confirm(\'Delete category '.$cat['name'].'?\');" class="fas fa-trash"></a></td>
+                      <td align="center"><a href="?do=settings&action=delete&cat_id='.$cat['id'].'#categories" onclick="return confirm(\'Delete category '.$cat['name'].'?\');" class="fas fa-trash"></a></td>
 					</tr>';
 				  		}
                     ?>
@@ -333,7 +333,7 @@ $(function() {
      
       
     <div id="print">
-        <form id="form1" name="form1" method="post" action="/?do=settings&update=printer#print">
+        <form id="form1" name="form1" method="post" action="?do=settings&update=printer#print">
         <table width="100%" border="0">
           <tr>
             <td colspan="4"><?php echo $msg; ?></td>
@@ -426,11 +426,11 @@ $(function() {
       <td width="87%">&nbsp;</td>
     </tr>
     <tr>
-      <td><a href="/pages/maintenance.php?do=backupDB">Backup DB</a></td>
+      <td><a href="pages/maintenance.php?do=backupDB">Backup DB</a></td>
       <td>&nbsp;</td>
     </tr>
     <tr>
-      <td><a href="/pages/maintenance.php?do=restoreDB" class="popup-link">Restore DB</a></td>
+      <td><a href="pages/maintenance.php?do=restoreDB" class="popup-link">Restore DB</a></td>
       <td>&nbsp;</td>
     </tr>
   </table>
@@ -445,7 +445,7 @@ $(document).ready(function(){
   $('#cat_data').editable({
   container: 'body',
   selector: 'td.cname',
-  url: "/pages/update_data.php?settings=cat",
+  url: "pages/update_data.php?settings=cat",
   title: 'Category',
   type: "POST",
   dataType: 'json',
@@ -459,7 +459,7 @@ $(document).ready(function(){
    $('#cat_data').editable({
   container: 'body',
   selector: 'td.cnotes',
-  url: "/pages/update_data.php?settings=cat",
+  url: "pages/update_data.php?settings=cat",
   title: 'Description',
   type: "POST",
   dataType: 'json',
@@ -471,7 +471,7 @@ $(document).ready(function(){
    $('#sup_data').editable({
   container: 'body',
   selector: 'td.sname',
-  url: "/pages/update_data.php?settings=sup",
+  url: "pages/update_data.php?settings=sup",
   title: 'Category',
   type: "POST",
   dataType: 'json',
@@ -485,7 +485,7 @@ $(document).ready(function(){
    $('#sup_data').editable({
   container: 'body',
   selector: 'td.snotes',
-  url: "/pages/update_data.php?settings=sup",
+  url: "pages/update_data.php?settings=sup",
   title: 'Description',
   type: "POST",
   dataType: 'json',
@@ -496,7 +496,7 @@ $(document).ready(function(){
    $('#prof_data').editable({
   container: 'body',
   selector: 'td.pname',
-  url: "/pages/update_data.php?settings=profile",
+  url: "pages/update_data.php?settings=profile",
   title: 'Profile',
   type: "POST",
   dataType: 'json',
@@ -510,7 +510,7 @@ $(document).ready(function(){
    $('#prof_data').editable({
   container: 'body',
   selector: 'td.pnotes',
-  url: "/pages/update_data.php?settings=profile",
+  url: "pages/update_data.php?settings=profile",
   title: 'Description',
   type: "POST",
   dataType: 'json',

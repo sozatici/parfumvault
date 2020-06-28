@@ -78,16 +78,14 @@ if(empty(mysqli_num_rows($sql))){
 	$ing = mysqli_fetch_array($sql);
 }
 ?>
-
+<div class="container-fluid">
           <h1 class="h3 mb-4 text-gray-800"><?php echo $ing['name']; ?></h1>
 
-        </div>
 <table width="100%" border="0">
         <tr>
-          <td><div class="form-group">  
+          <td> 
 			<form action="?do=editIngredient&id=<?php echo $ingID; ?>" method="post" enctype="multipart/form-data" name="edit_ing" target="_self" id="edit_ing">  
-                          <div class="table-responsive">
-                            <table width="100%" border="0">
+              <table width="100%" border="0">
                               <tr>
                                 <td colspan="3"><?php echo $msg; ?></td>
                               </tr>
@@ -211,8 +209,9 @@ if(empty(mysqli_num_rows($sql))){
                             <p>
                               <input type="submit" name="save" id="submit" class="btn btn-info" value="Save" />
                             </p>
-          </div>  
      </form>
-                </div></td>
+               </td>
         </tr>
 </table>
+</div>
+</div>

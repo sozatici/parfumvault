@@ -61,7 +61,7 @@ $(document).ready(function(){
   $('#formula_metadata').editable({
   container: 'body',
   selector: 'td.notes',
-  url: "/pages/update_data.php?formulaMeta=<?php echo $info['name']; ?>",
+  url: "update_data.php?formulaMeta=<?php echo $info['name']; ?>",
   title: 'Notes',
   type: "POST",
   mode: 'inline',
@@ -75,7 +75,7 @@ $(document).ready(function(){
   $('#profile').editable({
 	value: "<?php echo $info['profile'];?>",
   	title: 'Profile',
-  	url: "/pages/update_data.php?formulaMeta=<?php echo $info['name']; ?>",
+  	url: "update_data.php?formulaMeta=<?php echo $info['name']; ?>",
     source: [
              {value: 'oriental', text: 'Oriental'},
              {value: 'woody', text: 'Woody'},
