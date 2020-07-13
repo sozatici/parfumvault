@@ -1,3 +1,4 @@
+0.1.8a - FIX displace
 0.1.8 - Minor update
 
 0.1.7 - FIX: Settings broken view

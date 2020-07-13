@@ -88,7 +88,6 @@ $(function() {
               <h6 class="m-0 font-weight-bold text-primary">Formulas</h6>
             </div>
             <div class="card-body">
-              <div>
               <?php
               	if(mysqli_num_rows(mysqli_query($conn, "SELECT id FROM ingredients"))== 0){
 					echo '<div class="alert alert-info alert-dismissible"><strong>INFO: </strong> no ingredients yet, click <a href="?do=ingredients">here</a> to add.</div>';
@@ -97,6 +96,7 @@ $(function() {
 
 				}else{
                 ?>
+              <div>
                 <div id="formulasprofile">
      <ul>
          <li><a href="#all"><span>All</span></a></li>
